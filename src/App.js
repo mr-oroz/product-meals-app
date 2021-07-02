@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from "./components/Header";
+import {
+    BrowserRouter as Router,
+    Switch,
+    // Route,
+} from "react-router-dom";
+import CategoriesComponent from "./components/CategoriesComponent";
+import {Container} from 'react-bootstrap';
+import BesoftComponents from './components/BesoftComponents';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Router>
+                <div className="App">
+                    <Header />
+                    <Container>
+                        <Switch>
+                            <CategoriesComponent />
+                            <BesoftComponents/>
+                        </Switch>
+                    </Container>
+                </div>
+            </Router>
+        </>
+    );
 }
 
 export default App;
